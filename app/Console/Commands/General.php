@@ -30,6 +30,7 @@ class General extends Command
 
         //$general->search();
         //$general->verify();
-        $general->searchInElement();
+        //$general->searchInElement();
+        $general->supportedSelectors();
     }
 }
