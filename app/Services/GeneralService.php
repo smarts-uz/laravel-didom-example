@@ -4,6 +4,8 @@ namespace App\Services;
 
 use DiDom\Document;
 use DiDom\Query;
+use DiDom\Element;
+use DOMElement;
 
 class GeneralService
 {
@@ -102,13 +104,36 @@ class GeneralService
         //  }
     }
 
-    public function output()
-    {
-        $document = new Document('https://www.olx.uz/', true);
-        $html2 =$document->find('.item');
-        $html = (string) $html2[0];
+//    public function output()
+//    {
+//        $document = new Document('https://www.olx.uz/', true);
+//        $html2 =$document->find('.item');
+//        $html = (string) $html2[0];
+//
+//        dump($html);
+//        dump($html2[0]);
+//    }
 
-        dump($html);
-        dump($html2[0]);
+    public function createElement()
+    {
+        // Creating an instance of the class
+        // $element = new Element('span', 'Hello');
+        // dd($element->html());
+
+        //  $attributes = ['name' => 'main', 'class' => 'main-class', 'id' => '111'];
+        //  $element2 = new Element('div', 'This is a div', $attributes);
+        // dd($element2->html());
+
+        //  $domElement = new DOMElement('span', 'Hello my friend');
+
+        //   $element3 = new Element($domElement);
+        // dd($element3->html());
+
+        //Using the method createElement
+        // $document = new Document();
+        //  $attributes2 = ['class' => 'text'];
+        //  $element4 = $document->createElement('p', 'This is text', $attributes2);
+        // dd($element4->html());
+        // dd($element4->text());
     }
 }
