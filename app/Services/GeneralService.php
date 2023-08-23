@@ -7,21 +7,21 @@ use DiDom\Query;
 
 class GeneralService
 {
-    //public function search()
-    //{
-    // CSS selector
-    // $document = new Document('https://www.olx.uz', true);
-    // $span = $document->find('.marginleft15');
-    // foreach ($span as $el){
-    //     dump($el->text());
-    // }
+    public function search()
+    {
+        // CSS selector
+        // $document = new Document('https://www.olx.uz', true);
+        // $span = $document->find('.marginleft15');
+        // foreach ($span as $el){
+        //     dump($el->text());
+        // }
 
-    // XPath
-    // $document = new Document('https://www.olx.uz', true);
-    // $span = $document->find('//*[@id="nav-conversations"]/a/span', Query::TYPE_XPATH);
-    // foreach ($span as $el){
-    //     dump($el->text());
-    // }
+        // XPath
+        // $document = new Document('https://www.olx.uz', true);
+        // $span = $document->find('//*[@id="nav-conversations"]/a/span', Query::TYPE_XPATH);
+        // foreach ($span as $el){
+        //     dump($el->text());
+    }
 
     //inside an element
     //  $document = new Document('https://www.olx.uz', true);
@@ -59,7 +59,7 @@ class GeneralService
     public function supportedSelectors()
     {
         // $document = new Document('https://www.olx.uz', true);
-        $document = new Document('https://cinerama.uz/', true);
+        // $document = new Document('https://cinerama.uz/', true);
 
         //tag
         //$element = $document->find('a');
@@ -88,17 +88,27 @@ class GeneralService
         // }
 
         // text of the links with "foo" class
-        $link = $document->find('a.link ::text');
-        foreach ($link as $el) {
-            dump($el);
-            dump('link');
-        }
+        //  $link = $document->find('a.link ::text');
+        //  foreach ($link as $el) {
+        //      dump($el);
+        //      dump('link');
+        //  }
 
         // address and title of all the fields with "bar" class
-        $link2 = $document->find('a.bar::attr(href|title)');
-        foreach ($link2 as $el){
-            dump($el);
-            dump('=================');
-        }
+        //  $link2 = $document->find('a.bar::attr(href|title)');
+        //  foreach ($link2 as $el){
+        //      dump($el);
+        //      dump('=================');
+        //  }
+    }
+
+    public function output()
+    {
+        $document = new Document('https://www.olx.uz/', true);
+        $html2 =$document->find('.item');
+        $html = (string) $html2[0];
+
+        dump($html);
+        dump($html2[0]);
     }
 }
