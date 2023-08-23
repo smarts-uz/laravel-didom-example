@@ -28,6 +28,7 @@ class General extends Command
     {
         $general = new GeneralService();
 
-        $general->search();
+        //$general->search();
+        $general->verify();
     }
 }
