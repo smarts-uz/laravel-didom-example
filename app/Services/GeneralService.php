@@ -34,7 +34,7 @@ class GeneralService
 
     public function verify()
     {
-        $document = new Document('https://www.olx.uz', true);
+       // $document = new Document('https://www.olx.uz', true);
        // if ($document->has('.userbox ')) {
        //     dump('work');
        //     $item = $document->find('.userbox');
@@ -44,8 +44,14 @@ class GeneralService
        //     }
        // }
 
-        if( count($elements = $document->find('.userbox')) > 0){
-            dump('success');
-        };
+       // if( count($elements = $document->find('.userbox')) > 0){
+       //     dump('success');
+       // };
+    }
+
+    public function searchInElement(){
+        $document = new Document('https://www.olx.uz', true);
+        $subCategories = $document->find('.subcategories-list')[0]->first('ul')->xpath('//li')[1]->text();
+        dump($subCategories);
     }
 }
