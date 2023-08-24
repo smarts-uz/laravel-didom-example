@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Services\AttributesService;
 use App\Services\Elements;
 use App\Services\GeneralService;
 use App\Services\MiscellaneousService;
@@ -48,6 +49,10 @@ class General extends Command
 
 
         $cache = new WorkingWithCache();
-        $cache->start();
+//        $cache->start();
+
+        $attr = new AttributesService();
+        $attr->start();
+
     }
 }
