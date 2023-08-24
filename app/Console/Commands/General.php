@@ -4,6 +4,7 @@ namespace App\Console\Commands;
 
 use App\Services\Elements;
 use App\Services\GeneralService;
+use App\Services\MiscellaneousService;
 use Illuminate\Console\Command;
 
 class General extends Command
@@ -39,7 +40,10 @@ class General extends Command
         //$general->newDocument();
 
         $elements = new Elements();
-        $elements->getting();
+//        $elements->getting();
+
+        $misc = new MiscellaneousService();
+        $misc->startMisc();
 
     }
 }
