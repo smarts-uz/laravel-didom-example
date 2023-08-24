@@ -7,6 +7,7 @@ use App\Services\Elements;
 use App\Services\GeneralService;
 use App\Services\MiscellaneousService;
 use App\Services\WorkingWithCache;
+use App\Services\WorkWithElements;
 use Illuminate\Console\Command;
 
 class General extends Command
@@ -52,7 +53,10 @@ class General extends Command
 //        $cache->start();
 
         $attr = new AttributesService();
-        $attr->start();
+//        $attr->start();
+
+        $workElements = new WorkWithElements();
+        $workElements->start();
 
     }
 }
