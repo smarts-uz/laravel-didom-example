@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Services\Elements;
 use App\Services\GeneralService;
 use Illuminate\Console\Command;
 
@@ -32,9 +33,13 @@ class General extends Command
         //$general->verify();
         //$general->searchInElement();
         //$general->supportedSelectors();
-//        $general->output();
-       // $general->createElement();
-//        $general->changeContent();
-        $general->newDocument();
+        //$general->output();
+        // $general->createElement();
+        //$general->changeContent();
+        //$general->newDocument();
+
+        $elements = new Elements();
+        $elements->getting();
+
     }
 }
