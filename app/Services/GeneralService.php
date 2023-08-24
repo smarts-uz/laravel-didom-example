@@ -5,25 +5,28 @@ namespace App\Services;
 use DiDom\Document;
 use DiDom\Query;
 use DiDom\Element;
-use DOMElement;
+
+//use DOMElement;
+use function Termwind\style;
+
 
 class GeneralService
 {
-    public function search()
-    {
-        // CSS selector
-        // $document = new Document('https://www.olx.uz', true);
-        // $span = $document->find('.marginleft15');
-        // foreach ($span as $el){
-        //     dump($el->text());
-        // }
+//    public function search()
+//    {
+    // CSS selector
+    // $document = new Document('https://www.olx.uz', true);
+    // $span = $document->find('.marginleft15');
+    // foreach ($span as $el){
+    //     dump($el->text());
+    // }
 
-        // XPath
-        // $document = new Document('https://www.olx.uz', true);
-        // $span = $document->find('//*[@id="nav-conversations"]/a/span', Query::TYPE_XPATH);
-        // foreach ($span as $el){
-        //     dump($el->text());
-    }
+    // XPath
+    // $document = new Document('https://www.olx.uz', true);
+    // $span = $document->find('//*[@id="nav-conversations"]/a/span', Query::TYPE_XPATH);
+    // foreach ($span as $el){
+    //     dump($el->text());
+//    }
 
     //inside an element
     //  $document = new Document('https://www.olx.uz', true);
@@ -58,51 +61,51 @@ class GeneralService
     //    dump($subCategories);
     //}
 
-    public function supportedSelectors()
-    {
-        // $document = new Document('https://www.olx.uz', true);
-        // $document = new Document('https://cinerama.uz/', true);
+//    public function supportedSelectors()
+//    {
+    // $document = new Document('https://www.olx.uz', true);
+    // $document = new Document('https://cinerama.uz/', true);
 
-        //tag
-        //$element = $document->find('a');
-        //dump('tagName: '.$element[0]->text());
+    //tag
+    //$element = $document->find('a');
+    //dump('tagName: '.$element[0]->text());
 
-        //class
-        //$element = $document->find('.item');
-        //dump('className'.$element[0]->text());
+    //class
+    //$element = $document->find('.item');
+    //dump('className'.$element[0]->text());
 
-        // ID,
-        //  $el = $document->find('#postNewAdLink')[0];
-        //dump('id'.$el->text());
+    // ID,
+    //  $el = $document->find('#postNewAdLink')[0];
+    //dump('id'.$el->text());
 
-        // name
-        //$name = $document->find('*[name]');
+    // name
+    //$name = $document->find('*[name]');
 
-        //foreach ($name as $el){
-        //     dump($el->text());
-        // }
+    //foreach ($name as $el){
+    //     dump($el->text());
+    // }
 
-        //value of an attribute
-        // $val = $document->find('a[href*=*]');
-        // foreach ($val as $el){
-        //     dump($el->text());
-        //     dump('work2');
-        // }
+    //value of an attribute
+    // $val = $document->find('a[href*=*]');
+    // foreach ($val as $el){
+    //     dump($el->text());
+    //     dump('work2');
+    // }
 
-        // text of the links with "foo" class
-        //  $link = $document->find('a.link ::text');
-        //  foreach ($link as $el) {
-        //      dump($el);
-        //      dump('link');
-        //  }
+    // text of the links with "foo" class
+    //  $link = $document->find('a.link ::text');
+    //  foreach ($link as $el) {
+    //      dump($el);
+    //      dump('link');
+    //  }
 
-        // address and title of all the fields with "bar" class
-        //  $link2 = $document->find('a.bar::attr(href|title)');
-        //  foreach ($link2 as $el){
-        //      dump($el);
-        //      dump('=================');
-        //  }
-    }
+    // address and title of all the fields with "bar" class
+    //  $link2 = $document->find('a.bar::attr(href|title)');
+    //  foreach ($link2 as $el){
+    //      dump($el);
+    //      dump('=================');
+    //  }
+//    }
 
 //    public function output()
 //    {
@@ -114,26 +117,47 @@ class GeneralService
 //        dump($html2[0]);
 //    }
 
-    public function createElement()
+    //  public function createElement()
+    //  {
+    // Creating an instance of the class
+    // $element = new Element('span', 'Hello');
+    // dd($element->html());
+
+    //  $attributes = ['name' => 'main', 'class' => 'main-class', 'id' => '111'];
+    //  $element2 = new Element('div', 'This is a div', $attributes);
+    // dd($element2->html());
+
+    //  $domElement = new DOMElement('span', 'Hello my friend');
+
+    //   $element3 = new Element($domElement);
+    // dd($element3->html());
+
+    //Using the method createElement
+    // $document = new Document();
+    //  $attributes2 = ['class' => 'text'];
+    //  $element4 = $document->createElement('p', 'This is text', $attributes2);
+    // dd($element4->html());
+    // dd($element4->text());
+    //  }
+
+//    public function changeContent()
+//    {
+//        $element = new Element('a');
+//        $element->setInnerHtml('Foo');
+//        dump($element->html());
+//        $element->setValue('someLink');
+//        dump($element->html());
+//        $element->setAttribute('href', 'https://www.google.com');
+//        dump($element->html());
+//
+//        $element->setInnerXml(' Foo <span>Bar</span><!-- Baz --><![CDATA[
+//        <root>Hello world!</root>
+//    ]]>');
+//        dump($element->html());
+//    }
+
+    public function newDocument()
     {
-        // Creating an instance of the class
-        // $element = new Element('span', 'Hello');
-        // dd($element->html());
-
-        //  $attributes = ['name' => 'main', 'class' => 'main-class', 'id' => '111'];
-        //  $element2 = new Element('div', 'This is a div', $attributes);
-        // dd($element2->html());
-
-        //  $domElement = new DOMElement('span', 'Hello my friend');
-
-        //   $element3 = new Element($domElement);
-        // dd($element3->html());
-
-        //Using the method createElement
-        // $document = new Document();
-        //  $attributes2 = ['class' => 'text'];
-        //  $element4 = $document->createElement('p', 'This is text', $attributes2);
-        // dd($element4->html());
-        // dd($element4->text());
+       
     }
 }
