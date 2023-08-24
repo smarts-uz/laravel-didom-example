@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Services\Elements;
 use App\Services\GeneralService;
 use App\Services\MiscellaneousService;
+use App\Services\WorkingWithCache;
 use Illuminate\Console\Command;
 
 class General extends Command
@@ -43,7 +44,10 @@ class General extends Command
 //        $elements->getting();
 
         $misc = new MiscellaneousService();
-        $misc->startMisc();
+//        $misc->startMisc();
 
+
+        $cache = new WorkingWithCache();
+        $cache->start();
     }
 }
