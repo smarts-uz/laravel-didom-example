@@ -158,6 +158,19 @@ class GeneralService
 
     public function newDocument()
     {
-       
+        //variant-1
+        $url = 'https://www.olx.uz/';
+        $document = new Document($url, true);
+        //dd($document);
+
+        //variant-2
+
+        $document2 = new Document();
+        //$document2->loadHtml($url);
+        $document2->loadHtmlFile($url, true);
+
+        dd($document2, LIBXML_HTML_NOIMPLIED | LIBXML_HTML_NODEFDTD);
+
+
     }
 }
